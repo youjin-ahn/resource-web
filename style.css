@@ -1,0 +1,147 @@
+.grid-container {
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    border: none;
+}
+
+.grid-cell {
+    background: #fffdfa;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.grid-cell:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.grid-cell img {
+    width: 300%;
+    height: auto;
+    object-fit: contain;
+    max-height: 280px;
+    margin-bottom: 15px;
+}
+
+.title {
+
+    text-align: center;
+    margin: 50px 0;
+    font-size: 20px;
+    color: rgb(131, 116, 116);
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+}
+  
+.modal-content {
+    position: relative;
+    background-color: transparent;
+    margin: 2% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 0;
+    
+}
+  
+@keyframes modalfade {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+  
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.modal-image {
+    text-align: center;
+}
+  
+.modal-image img {
+    max-width: 100%;
+    max-height: 600px; /* 이미지 최대 높이 증가 */
+    border-radius: 8px;
+}
+
+.header {
+    padding: 15px 0;
+    background-color: #f9f5f0;
+    border-bottom: 1px solid #e9e2d8;
+  }
+  
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* 메뉴 가운데 정렬로 변경 */
+    padding: 0 20px;
+  }
+  
+  .main-nav {
+    display: flex;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-nav li {
+    margin-right: 30px;
+  }
+  
+  .main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .main-nav a:hover {
+    color: #9c7c38;
+  }
+
+  .banner-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
