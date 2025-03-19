@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Teas - ATEA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="pure-teas.html">Pure teas</a></li>
+              <li><a href="fermented-teas.html">Fermented teas</a></li>
+              <li><a href="herbal-teas.html">Herbal teas</a></li>
+              <li><a href="fruit-teas.html">Fruit teas</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </nav>
+        </div>
+    </header>
+
+
+    <div class="grid-container">
+        <div class="grid">
+            <div class="grid-cell">
+                <img src="images/chamomile tea.png" alt="Chamomile Tea">
+            </div>
+            <div class="grid-cell">
+                <img src="images/lavender tea.png" alt="Lavender Tea">
+            </div>
+            <div class="grid-cell">
+                <img src="images/rooibos.png" alt="Rooibos Tea">
+        </div>
+    </div>
+
+    <!-- 모달 컨테이너 -->
+    <div id="tea-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-image">
+                <img id="modal-img" src="" alt="Tea Information">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 차 정보 데이터
+        const teas = {
+            "chamomile tea": {
+                image: "images/chamomile tea_de.png"
+            },
+            "lavender tea": {
+                image: "images/lavender tea_de.png"
+            },
+            "rooibos tea": {
+                image: "images/rooibos tea_de.png"
+            }
+        };
+
+        // 모달 관련 스크립트
+        const modal = document.getElementById('tea-modal');
+        const closeBtn = document.querySelector('.close');
+
+        document.querySelectorAll('.grid-cell').forEach(cell => {
+            cell.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                if (img) {
+                    const teaName = img.alt.toLowerCase();
+                    if (teas[teaName.toLowerCase()]) {
+                        document.getElementById('modal-img').src = teas[teaName.toLowerCase()].image;
+                        modal.style.display = "block";
+                    }
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
